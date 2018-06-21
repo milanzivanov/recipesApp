@@ -1,9 +1,11 @@
 import {
   Directive,
-  OnInit, ElementRef,
+  OnInit,
+  ElementRef,
   Renderer2,
   HostListener,
-  HostBinding
+  HostBinding,
+  Input
 } from '@angular/core';
 
 @Directive({
@@ -11,7 +13,10 @@ import {
 })
 export class BetterDirective implements OnInit {
 
-  @HostBinding( 'style.backgroundColor' ) backgroundColor = 'transparent';
+  @Input() defaultColor = 'transparent';
+  @Input() highlightColor = 'blue';
+
+  @HostBinding( 'style.backgroundColor' ) backgroundColor: string;
   constructor(
     private _elRef: ElementRef,
     private renderer: Renderer2
@@ -19,6 +24,7 @@ export class BetterDirective implements OnInit {
 
   ngOnInit() {
     // this.renderer.setStyle(this._elRef.nativeElement, 'background-color', 'orange');
+    this.backgroundColor = this.defaultColor;
   }
 
 
@@ -26,14 +32,14 @@ export class BetterDirective implements OnInit {
     // this.renderer.setStyle(
     //   this._elRef.nativeElement, 'background-color', 'orange'
     // );
-    this.backgroundColor = 'yellow';
+    this.backgroundColor = this.highlightColor;
   }
 
   @HostListener('mouseleave') mouseleave(eventData: Event) {
     // this.renderer.setStyle(
     //   this._elRef.nativeElement, 'background-color', 'pink'
     // );
-    this.backgroundColor = 'transparent';
+    this.backgroundColor = this.defaultColor;
   }
 
 
