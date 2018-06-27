@@ -17,6 +17,7 @@ import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
 import { DropdownDirective } from './shared/dropdown.directive';
 import { BetterDirective } from './shared/better.directive';
+import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { BetterDirective } from './shared/better.directive';
     ShoppingEditComponent,
     DropdownDirective,
     BasicDirective,
-    BetterDirective
+    BetterDirective,
+    RecipeStartComponent
   ],
   imports: [
     BrowserModule,
