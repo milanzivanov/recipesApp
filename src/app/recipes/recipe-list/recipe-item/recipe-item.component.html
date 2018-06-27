@@ -1,4 +1,6 @@
 <a
+  [routerLink]="[index]"
+  routerLinkActive="active"
   style="cursor: pointer"
   class="d-flex
   justify-content-between
@@ -9,7 +11,7 @@
 
   <div class="d-flex
        flex-column
-       align-items-center">
+       align-items-start">
     <h4>{{ recipe.name }}</h4>
     <p>{{ recipe.description }}</p>
   </div>
