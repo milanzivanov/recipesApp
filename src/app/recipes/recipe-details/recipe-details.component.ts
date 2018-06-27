@@ -1,7 +1,8 @@
 import { RecipeService } from './../recipe.service';
 import { Component, OnInit } from '@angular/core';
 import { Recipe } from '../recipe.model';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
+import { WSASYSCALLFAILURE } from 'constants';
 
 @Component({
   selector: 'app-recipe-details',
@@ -14,7 +15,8 @@ export class RecipeDetailsComponent implements OnInit {
   id: number;
 
   constructor(private recipeService: RecipeService,
-              private route: ActivatedRoute) { }
+              private route: ActivatedRoute,
+            private router: Router) { }
 
   ngOnInit() {
     // const id = this.route.snapshot.params['id'];
@@ -26,6 +28,14 @@ export class RecipeDetailsComponent implements OnInit {
 
   onAddToShoppingList() {
     this.recipeService.addIngredientsToShoppingList(this.recipe.ingredients);
+  }
+
+  onEditRecipe() {
+    // good way
+    this.router.navigate(['edit'], {relativeTo: this.route});
+
+    // alternitive way
+    // this.router.navigate(['../', this.id, 'edit'], {relativeTo: this.route});
   }
 
 }
