@@ -21,7 +21,7 @@ export class RecipeService {
     new Recipe(
       'Burek',
       'This is test2',
-      'https://cookinguniverse.tv/wp-content/uploads/2012/11/Sarma-with-potatos.jpg'
+      'http://www.balkanfoodrecipes.com/wp-content/uploads/2015/10/sirnica1.jpg'
       ,
       [
         new Ingredient('Sarma', 5),
