@@ -51,8 +51,7 @@
           class="col-sm-12 form-group">
           <img
             class="img-responsive"
-            [src]="imagePath.value"
-            alt="img">
+            [src]="imagePath.value">
         </div>
       </div>
 
@@ -95,7 +94,10 @@
             </div>
             <div
               class="col-sm-2 form-group">
-              <button class="btn btn-danger">X</button>
+              <button
+                class="btn btn-danger"
+                type="button"
+                (click)="onDelite(i)">X</button>
             </div>
           </div>
 
