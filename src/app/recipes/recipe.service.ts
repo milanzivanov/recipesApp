@@ -57,4 +57,9 @@ export class RecipeService {
     this.recipesChanged.next(this.recipes.slice());
   }
 
+  deliteRecipe(index: number) {
+    this.recipes.slice(index, 1);
+    this.recipesChanged.next(this.recipes.slice());
+  }
+
 }
