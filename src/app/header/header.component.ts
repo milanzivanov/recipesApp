@@ -19,4 +19,8 @@ export class HeaderComponent {
         );
   }
 
+  onFatchData() {
+    this.dataStorageService.getRecipes();
+  }
+
 }
