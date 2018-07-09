@@ -1,9 +1,9 @@
+import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
+import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { BasicDirective } from './shared/basic.directive';
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
 import { RecipeService } from './recipes/recipe.service';
 import { ShoppingListService } from './shopping-list/shopping-list.service';
 
@@ -19,7 +19,6 @@ import { DropdownDirective } from './shared/dropdown.directive';
 import { BetterDirective } from './shared/better.directive';
 import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.component';
 import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
-import { HttpModule } from '../../node_modules/@angular/http';
 import { DataStorageService } from './shared/data-storage.service';
 
 @NgModule({
@@ -44,7 +43,6 @@ import { DataStorageService } from './shared/data-storage.service';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpModule
   ],
   providers: [RecipeService, ShoppingListService,  DataStorageService],
   bootstrap: [AppComponent]

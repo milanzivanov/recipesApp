@@ -27,8 +27,8 @@ export class RecipeService {
       'http://www.balkanfoodrecipes.com/wp-content/uploads/2015/10/sirnica1.jpg'
       ,
       [
-        new Ingredient('Sarma', 5),
-        new Ingredient('Musaka', 3)
+        new Ingredient('Testo', 5),
+        new Ingredient('Meso', 3)
       ])
   ];
 
