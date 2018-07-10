@@ -19,31 +19,34 @@
           <a
             class="nav-link"
             routerLink="/shopping-list">Shopping List</a>
-        </li>
-      </ul>
+          </li>
+        </ul>
 
-      <ul class="nav navbar-nav ml-auto">
-        <div
-          class="dropdown dropleft"
-          appDropdown>
-          <button
-            class="btn btn-primary dropdown-toggle"
-            role="button">
-            Menage <span class="caret"></span>
-          </button>
-          <ul
-            class="dropdown-menu p-0"
-            data-toggle="dropdown">
-            <li><a
-              style="cursor: pointer"
-              class="dropdown-item list-group-item"
-              (click)="onSavedata()">Save data</a></li>
-            <li><a
-              style="cursor: pointer"
-              class="dropdown-item list-group-item"
-              (click)="onFatchData()">Fetch data</a></li>
-          </ul>
-        </div>
+        <ul class="nav navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/signup">Register</a>
+          </li>
+          <div
+            class="dropdown dropleft"
+            appDropdown>
+            <button
+              class="btn btn-primary dropdown-toggle"
+              role="button">
+              Menage <span class="caret"></span>
+            </button>
+            <ul
+              class="dropdown-menu p-0"
+              data-toggle="dropdown">
+              <li><a
+                style="cursor: pointer"
+                class="dropdown-item list-group-item"
+                (click)="onSavedata()">Save data</a></li>
+              <li><a
+                style="cursor: pointer"
+                class="dropdown-item list-group-item"
+                (click)="onFatchData()">Fetch data</a></li>
+            </ul>
+          </div>
       </ul>
 
     </div>
