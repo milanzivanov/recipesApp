@@ -14,21 +14,24 @@
             routerLink="/recipes">Recipes</a>
         </li>
         <li
-           class="nav-item"
-           routerLinkActive="active">
+            class="nav-item"
+            routerLinkActive="active">
           <a
             class="nav-link"
             routerLink="/shopping-list">Shopping List</a>
-          </li>
-        </ul>
+        </li>
+      </ul>
 
         <ul class="nav navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/signup">Register</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/signin">Login</a>
-          </li>
+            <!-- ng-tamplate use either <template> or <ng-container> -->
+          <ng-template [ngIf]="!authService.isAuthenticated()">
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/signup">Register</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/signin">Login</a>
+            </li>
+          </ng-template>
           <div
             class="dropdown dropleft"
             appDropdown>
@@ -39,15 +42,20 @@
             </button>
             <ul
               class="dropdown-menu p-0"
-              data-toggle="dropdown">
-              <li><a
-                style="cursor: pointer"
-                class="dropdown-item list-group-item"
-                (click)="onSavedata()">Save data</a></li>
-              <li><a
-                style="cursor: pointer"
-                class="dropdown-item list-group-item"
-                (click)="onFatchData()">Fetch data</a></li>
+              data-toggle="dropdown"
+              *ngIf="authService.isAuthenticated()">
+              <li>
+                <a
+                  style="cursor: pointer"
+                  class="dropdown-item list-group-item"
+                  (click)="onSavedata()">Save data</a>
+              </li>
+              <li>
+                <a
+                  style="cursor: pointer"
+                  class="dropdown-item list-group-item"
+                  (click)="onFatchData()">Fetch data</a>
+                </li>
             </ul>
           </div>
       </ul>
