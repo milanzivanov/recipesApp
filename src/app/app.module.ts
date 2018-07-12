@@ -6,7 +6,6 @@ import { AuthGuard } from './auth/auth-guard.service';
 import { AuthService } from './auth/auth.service';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
-import { RecipesModule } from './recipes/recipes.module';
 import { BasicDirective } from './shared/basic.directive';
 import { RecipeService } from './recipes/recipe.service';
 import { ShoppingListService } from './shopping-list/shopping-list.service';
@@ -21,13 +20,15 @@ import { HeaderComponent } from './header/header.component';
 import { BetterDirective } from './shared/better.directive';
 import { DataStorageService } from './shared/data-storage.service';
 import { SharedModule } from './shared/shared.module';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     BasicDirective,
-    BetterDirective
+    BetterDirective,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +37,6 @@ import { SharedModule } from './shared/shared.module';
     AngularFireAuthModule,
     AppRoutingModule,
     HttpClientModule,
-    RecipesModule,
     SharedModule,
     ShoppingListModule,
     AuthModule
