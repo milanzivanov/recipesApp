@@ -16,19 +16,16 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
 import { BetterDirective } from './shared/better.directive';
 import { DataStorageService } from './shared/data-storage.service';
 import { SharedModule } from './shared/shared.module';
-import { HomeComponent } from './home/home.component';
+import { CoreModule } from './core/core.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
     BasicDirective,
     BetterDirective,
-    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +36,8 @@ import { HomeComponent } from './home/home.component';
     HttpClientModule,
     SharedModule,
     ShoppingListModule,
-    AuthModule
+    AuthModule,
+    CoreModule
   ],
   providers: [
     RecipeService,
